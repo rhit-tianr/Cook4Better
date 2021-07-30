@@ -1,12 +1,25 @@
-body {
-    background: #DDDDDD;
-}
 
 .navbar {
     background-color: #800000;
     color: white;
 }
 
-.page-container {
-    margin-top: 75px;
+#loginPage {
+    margin-top: 80px;
+}
+
+#typeArea{
+    background: white;
+    padding: 20px;
+    padding-top: 10px; 
+}
+
+
+body{
+    background-image: url('/images/loginpic.jpg');
+    height: 100%;
+    width: 100%;
+    background-position: 30% 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
