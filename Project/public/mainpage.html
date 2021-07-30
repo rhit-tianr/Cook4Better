@@ -12,24 +12,22 @@
 
 <body>
   <nav class="navbar navbar-dark fixed-top">
-    <a class="navbar-brand" href="#">Cook4Better</a>
+    <div id="navBar" class="container">
+      <i id="menu" class="material-icons">menu</i>
+      <input type="text" placeholder="Search..">
+      <i id="searchButton" class="material-icons">search</i>
+    </div>
   </nav>
-  <div id="loginPage" class="container page-container">
-    <div id="picArea">
-      <img src="images/loginpic.jpg" class="img-fluid" alt="loginpage background image">
+
+  <div id="MainPage" class="container page-container">
+    <div id="filter">
+      Sorted By: 
+      <button id="filterButton" type="button" class="btn">NEW - OLD</button>
     </div>
+      
     
-    <div id="typeArea">
-      <div class="form-group">
-        <label for="loginEmail" class="bmd-label-floating">Email</label>
-        <input type="email" class="form-control" id="loginEmail">
-      </div>
-      <div class="form-group">
-        <label for="loginPassword" class="bmd-label-floating">Password</label>
-        <input type="password" class="form-control" id="loginPassword">
-      </div>
-    </div>
     
+  
   </div>
 
   <script src="scripts/jquery.min.js"></script>
