@@ -78,6 +78,20 @@ h1{
     text-align: center;
 }
 
+#fab{
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+    background: #800000;
+    color: white;
+    z-index: 999;
+}
+
+#fab:active{
+    transform: translateY(2px);
+    opacity: 0.8;
+}
+
 
 @media (min-width: 1280px) {
     #typeArea{
@@ -95,7 +109,7 @@ h1{
     }
 }
 
-.bmd-form-group{
+.container > .bmd-form-group{
     padding-top: 0px;
 }
 
@@ -121,7 +135,16 @@ h1{
 
 input[type=text] {
     width: 100%;
- }
+}
+.card{
+    margin: 10px 0;
+}
+#MainPage .card-title, #MainPage .card-subtitle{
+    white-space: nowrap;
+    overflow: hidden;
+    display: block;
+    text-overflow: ellipsis;
+}
 
  #MainPage .container, .page-container{
      padding: 0px;
