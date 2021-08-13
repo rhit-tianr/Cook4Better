@@ -2,13 +2,28 @@
 
 body {
     background: #DDDDDD;
+
 }
-.navbar{
+
+.navbar {
     background-color: #800000;
     color: white;
-    margin-bottom: 0px;
-    position:absolute;
 }
+
+nav.navbar.navbar-dark.fixed-top {
+    padding-bottom: 0px;
+}
+
+.navbar.navbar-dark.bg-faded {
+    padding-bottom: 5px;
+}
+
+#topBar {
+    position: fixed;
+    /* z-index: 5; */
+}
+
+
 /* .navbar > #searchbar {
     background-color: #800000;
     color: white;
@@ -16,53 +31,69 @@ body {
     grid-template-columns: repeat(3, 1fr);
 } */
 
-/* #menu{
-    grid-column: 1; 
-}
-#search{
-    grid-column: 1/ 3;
+/* #navbar-wrapper{
+    position: fixed;
 } */
 
+.bmd-layout-content{
+    height: 100vh;
+}
+
+.bmd-layout-drawer>header {
+    background-color: #800000;
+    color: white;
+}
+
+.bmd-layout-drawer>ul {
+    background-color: #ddd;
+}
+
+.list-group-item :first-child {
+    margin-right: 0.75rem;
+}
+
 .page-container {
-    margin-top: 45px; /* 弄得和navbar一样高 */
+    margin-top: 50px;
+    /* 弄得和navbar一样高 */
 }
 
 #loginPage {
     margin-top: 80px;
 }
 
-#typeArea{
+#typeArea {
     border-radius: 25px;
     background: white;
     opacity: 80%;
     padding: 20px;
-    padding-top: 10px; 
-
+    padding-top: 10px;
+    margin: 0px 10px;
 }
-#loginButtonGroup .row{
+
+#loginButtonGroup .row {
     display: flex;
     justify-content: center;
 }
 
-#loginButtonGroup button{
+#loginButtonGroup button {
     margin: 5px 10px;
     background-color: #fff;
     width: 180px;
 }
 
-#loginButtonGroup button:hover{
+#loginButtonGroup button:hover {
     background-color: #000;
-    color:white;
+    color: white;
 }
 
 
-#typeArea label{
+#typeArea label {
     font-family: 'Raleway', sans-serif;
     color: black;
 }
 
-#BG{
-    height:100%;
+#BG {
+    height: 100%;
     background-image: url('/images/loginpic.jpg');
     background-position: 30% 50%;
     background-repeat: no-repeat;
@@ -70,7 +101,7 @@ body {
     background-size: cover;
 }
 
-h1{
+h1 {
     margin-bottom: 0px;
     font-size: 2.5em;
     font-family: 'Lobster', cursive;
@@ -78,7 +109,7 @@ h1{
     text-align: center;
 }
 
-#fab{
+#fab {
     position: fixed;
     right: 10px;
     bottom: 10px;
@@ -87,20 +118,21 @@ h1{
     z-index: 999;
 }
 
-#fab:active{
+#fab:active {
     transform: translateY(2px);
     opacity: 0.8;
 }
 
 
 @media (min-width: 1280px) {
-    #typeArea{
+    #typeArea {
         background: white;
         opacity: 80%;
         padding: 20px;
-        padding-top: 10px; 
+        padding-top: 10px;
     }
-    h1{
+
+    h1 {
         margin-bottom: 0px;
         line-height: 2em;
         font-family: 'Lobster', cursive;
@@ -109,43 +141,94 @@ h1{
     }
 }
 
-.container > .bmd-form-group{
+/* .container > .bmd-form-group{
+    padding-top: 0px;
+} */ 
+
+#serachBar {
     padding-top: 0px;
 }
 
 
-#filter{
-    background:#323232;
-    color:white;
+#filter {
+    background: #323232;
+    color: white;
     text-align: right;
     margin-left: 0px;
     margin-right: 0px;
 }
 
-#filterButton{
-    color:#FF5722;
+#filterButton {
+    color: #FF5722;
     margin-bottom: 0px;
-    padding:5px 10px;
-}
-  
-
-#navBar{
-    display: flex; 
+    padding: 5px 10px;
 }
 
-input[type=text] {
-    width: 100%;
-}
-.card{
+
+
+.card {
     margin: 10px 0;
 }
-#MainPage .card-title, #MainPage .card-subtitle{
+
+#MainPage .card-title,
+#MainPage .card-subtitle {
     white-space: nowrap;
     overflow: hidden;
     display: block;
     text-overflow: ellipsis;
 }
 
- #MainPage .container, .page-container{
-     padding: 0px;
- }
+
+
+#menuSignOut:hover {
+    background-color: grey;
+    color: white;
+}
+#menuUserInfo:hover {
+    background-color: grey;
+    color: white;
+}
+
+#menuDelete:hover {
+    background-color: grey;
+    color: white;
+}
+#menuEdit:hover {
+    background-color: grey;
+    color: white;
+}
+
+
+#MainPage .container,
+.page-container {
+    padding: 0px;
+}
+
+.dropdown-menu-right {
+    left: -128px;
+}
+
+
+
+/* #menuEdit,
+#menuDelete{
+    display:none;
+} */
+
+#detailTitle {
+    color: black;
+    text-align: center;
+    padding:10px;
+}
+/* #detailPage{
+    
+} */
+
+#oriB{
+    float: right;
+}
+
+.iframe-container {
+    text-align:center;
+      width:100%;
+}
