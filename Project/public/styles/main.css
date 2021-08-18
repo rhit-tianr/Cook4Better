@@ -149,23 +149,6 @@ h1 {
     padding-top: 0px;
 }
 
-
-#filter {
-    background: #323232;
-    color: white;
-    text-align: right;
-    margin-left: 0px;
-    margin-right: 0px;
-}
-
-#filterButton {
-    color: #FF5722;
-    margin-bottom: 0px;
-    padding: 5px 10px;
-}
-
-
-
 .card {
     margin: 10px 0;
 }
