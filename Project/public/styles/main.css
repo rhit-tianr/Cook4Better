@@ -1,12 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Lobster&family=Raleway:ital,wght@1,700&family=Roboto:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Courgette&family=Oleo+Script&family=Shrikhand&display=swap');
 
 body {
     background: #DDDDDD;
-
+    background-color: #f2a97e;
+    background-image: url("https://www.transparenttextures.com/patterns/food.png");
+    /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
 }
 
 .navbar {
-    background-color: #800000;
+    background-color:#73433F ;
     color: white;
 }
 
@@ -35,26 +38,46 @@ nav.navbar.navbar-dark.fixed-top {
     position: fixed;
 } */
 
-.bmd-layout-content{
+.bmd-layout-content {
     height: 100vh;
 }
 
+.bmd-layout-drawer {
+    position: fixed;
+}
+
 .bmd-layout-drawer>header {
-    background-color: #800000;
-    color: white;
+    background-color: #592925;
+    color: #D9B5A0;
 }
 
 .bmd-layout-drawer>ul {
-    background-color: #ddd;
+    background-color: #D9B5A0;
 }
 
 .list-group-item :first-child {
     margin-right: 0.75rem;
 }
 
+/* .list-group-item{
+    color: #BF826B;
+} */
+
+#menuUserInfo, 
+#menuShowAllRecipes,
+#menuShowMyRecipes,
+#menuSignOut{
+    color: #634231;
+}
+
+#searchbutton{
+    background-color: #A66D3C;
+    color: white;
+}
+
+
 .page-container {
-    margin-top: 50px;
-    /* 弄得和navbar一样高 */
+    margin-top: 75px;
 }
 
 #loginPage {
@@ -92,6 +115,38 @@ nav.navbar.navbar-dark.fixed-top {
     color: black;
 }
 
+h6{
+    font-family: 'Oleo Script', cursive;
+    
+}
+h7 {
+    font-family: 'Courgette', cursive;
+    color: white;
+}
+
+.bmd-help, .text-muted {
+    color: white!important;
+}
+
+#dropDownMenu{
+    background-color: #D9B5A0
+}
+
+#menuEdit,
+#menuDelete,
+#BookMark,
+#menuSignOut{
+    color: #592925;
+}
+
+
+#backButton{
+    font-size: 2em;
+    font-family: 'Lobster', cursive;
+    color: #FFEDD4;
+}
+
+
 #BG {
     height: 100%;
     background-image: url('/images/loginpic.jpg');
@@ -109,20 +164,57 @@ h1 {
     text-align: center;
 }
 
+#topWord{
+    font-size: 2em;
+    font-family: 'Lobster', cursive;
+    color: #FFEDD4;
+}
+
+h5 {
+    font-family: 'Lobster', cursive;
+    color: white;
+}
+
 #fab {
     position: fixed;
-    right: 10px;
+    right: 25px;
     bottom: 10px;
-    background: #800000;
+    background: #BF4141;
     color: white;
     z-index: 999;
 }
+
+.modal-backdrop {
+    background-color: #F2A97E;
+ }
 
 #fab:active {
     transform: translateY(2px);
     opacity: 0.8;
 }
 
+
+
+/* iframe{
+    width: 495px;
+    height: 283.5px;
+} */
+#detailContent {
+    font-family: 'Shrikhand', cursive;
+    font-size: 1.25em;
+    white-space: pre-wrap;
+    justify-content: center;
+    max-width: 100%;
+    max-height: auto;
+    padding-left: 10%;
+    padding-right: 10%;
+    margin: 0px;
+}
+
+iframe {
+    max-width: 90% !important;
+    max-height: 80% !important;
+}
 
 @media (min-width: 1280px) {
     #typeArea {
@@ -139,19 +231,24 @@ h1 {
         color: white;
         text-align: center;
     }
+
+
 }
 
 /* .container > .bmd-form-group{
     padding-top: 0px;
-} */ 
+} */
 
 #serachBar {
     padding-top: 0px;
 }
 
 .card {
+    background-color: #D98555;
     margin: 10px 0;
 }
+
+
 
 #MainPage .card-title,
 #MainPage .card-subtitle {
@@ -167,6 +264,7 @@ h1 {
     background-color: grey;
     color: white;
 }
+
 #menuUserInfo:hover {
     background-color: grey;
     color: white;
@@ -176,16 +274,27 @@ h1 {
     background-color: grey;
     color: white;
 }
+
 #menuEdit:hover {
     background-color: grey;
     color: white;
 }
 
-
-#MainPage .container,
-.page-container {
-    padding: 0px;
+#BookMark:hover {
+    background-color: grey;
+    color: white;
 }
+
+#menuShowAllRecipes:hover {
+    background-color: grey;
+    color: white;
+}
+
+#menuShowMyRecipes:hover {
+    background-color: grey;
+    color: white;
+}
+
 
 .dropdown-menu-right {
     left: -128px;
@@ -193,25 +302,26 @@ h1 {
 
 
 
-/* #menuEdit,
-#menuDelete{
-    display:none;
-} */
+#menuEdit,
+#menuDelete {
+    display: none;
+}
 
 #detailTitle {
     color: black;
     text-align: center;
-    padding:10px;
+    padding: 10px;
 }
+
 /* #detailPage{
     
 } */
 
-#oriB{
+#oriB {
     float: right;
 }
 
 .iframe-container {
-    text-align:center;
-      width:100%;
+    text-align: center;
+    width: 100%;
 }

@@ -26,15 +26,15 @@
           <i class="material-icons">menu</i>
         </button>
         <div class="ml-auto">
-          <input type="text">
-          <button>Search</button>
+          <input id="searchcontent" type="text">
+          <button id="searchbutton">Search</button>
         </div>
       </div>
     </header>
 
     <div id="dw-s2" class="bmd-layout-drawer bg-faded">
       <header>
-        <a class="navbar-brand">Cook 4 Better</a>
+        <a id="topWord" class="navbar-brand">Cook 4 Better</a>
       </header>
       <ul class="list-group">
         <a id="menuUserInfo" class="list-group-item" data-toggle="modal" data-target="#showUserInfoDialog"> <i
@@ -46,79 +46,84 @@
       </ul>
     </div>
 
-    <div id="MainPage" class="container page-container">
-      <div id="recipeListContainer">
+    <main class="bmd-layout-content">
+      <div id="MainPage" class="container page-container">
+        <div id="recipeListContainer"></div>
+
       </div>
+    </main>
+  </div>
 
-      <button id="fab" type="button" class="btn bmd-btn-fab" data-toggle="modal" data-target="#addRecipeDialog">
-        <i class="material-icons">add</i>
-      </button>
-      <!-- Modal -->
-      <div class="modal fade" id="addRecipeDialog" tabindex="-1" role="dialog" aria-labelledby="Add recipe dialog"
-        aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title">Add A New Recipe</h5>
-            </div>
-            <div class="modal-body">
-              <div class="form-group bmd-form-group">
-                <label for="inputTitle" class="bmd-label-floating">Title</label>
-                <input type="text" class="form-control" id="inputTitle">
-              </div>
-              <div class="form-group bmd-form-group">
-                <label for="inputVideoLink" class="bmd-label-floating">Video Link</label>
-                <input type="text" class="form-control" id="inputVideoLink">
-              </div>
 
-              <div class="form-group bmd-form-group">
-                <label for="contentTextarea">Content</label>
-                <textarea class="form-control" id="contentTextarea" rows="10"></textarea>
-              </div>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">CANCEL</button>
-              <button id="submitAddRecipe" type="button" class="btn btn-primary" data-dismiss="modal">CREATE</button>
-            </div>
+
+  <button id="fab" type="button" class="btn bmd-btn-fab" data-toggle="modal" data-target="#addRecipeDialog">
+    <i class="material-icons">add</i>
+  </button>
+  <!-- Modal -->
+  <div class="modal fade" id="addRecipeDialog" tabindex="-1" role="dialog" aria-labelledby="Add recipe dialog"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Add A New Recipe</h4>
+        </div>
+        <div class="modal-body">
+          <div class="form-group bmd-form-group">
+            <label for="inputTitle" class="bmd-label-floating">Title</label>
+            <input type="text" class="form-control" id="inputTitle">
+          </div>
+          <div class="form-group bmd-form-group">
+            <label for="inputVideoLink" class="bmd-label-floating">Video Link</label>
+            <input type="text" class="form-control" id="inputVideoLink">
+          </div>
+
+          <div class="form-group bmd-form-group">
+            <label for="contentTextarea">Content</label>
+            <textarea class="form-control" id="contentTextarea" rows="10"></textarea>
           </div>
         </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">CANCEL</button>
+          <button id="submitAddRecipe" type="button" class="btn btn-primary" data-dismiss="modal">CREATE</button>
+        </div>
       </div>
+    </div>
+  </div>
 
-      <div class="modal fade" id="showUserInfoDialog" tabindex="-1" role="dialog" aria-labelledby="Add recipe dialog"
-        aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title">My Account Information</h5>
-            </div>
-            <div class="modal-body">
-              <div class="form-group bmd-form-group">
-                <label for="inputName">Display Name</label>
-                <input type="text" class="form-control" id="inputName">
-              </div>
-              <div class="form-group bmd-form-group">
+  <div class="modal fade" id="showUserInfoDialog" tabindex="-1" role="dialog" aria-labelledby="Add recipe dialog"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">My Account Information</h4>
+        </div>
+        <div class="modal-body">
+          <div class="form-group bmd-form-group">
+            <label for="inputName">Display Name</label>
+            <input type="text" class="form-control" id="inputName">
+          </div>
+          <!-- <div class="form-group bmd-form-group">
                 <label for="inputPhone">Phone Number</label>
                 <input type="text" class="form-control" id="inputPhone">
               </div>
               <div class="form-group bmd-form-group">
                 <label for="inputEmail">Email Address</label>
                 <input type="text" class="form-control" id="inputEmail">
-              </div>
-              
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">CANCEL</button>
-              <button id="submitUpdateUser" type="button" class="btn btn-primary" data-dismiss="modal">UPDATE</button>
-            </div>
-          </div>
+              </div> -->
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">CANCEL</button>
+          <button id="submitUpdateUser" type="button" class="btn btn-primary" data-dismiss="modal">UPDATE</button>
         </div>
       </div>
-
     </div>
-
-
-
   </div>
+
+
+
+
+
+
 
   <script src="scripts/jquery.min.js"></script>
   <script src="scripts/popper.js"></script>

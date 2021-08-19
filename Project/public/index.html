@@ -19,24 +19,57 @@
     </div>
     
     <div id="typeArea">
-      <!-- <div class="form-group">
+      <div class="form-group">
         <label for="loginEmail" class="bmd-label-floating">Email</label>
         <input type="email" class="form-control" id="loginEmail">
       </div>
       <div class="form-group">
         <label for="loginPassword" class="bmd-label-floating">Password</label>
         <input type="password" class="form-control" id="loginPassword">
-      </div> -->
-      <!-- <div class="w-100"></div>
+      </div>
+      <div class="w-100"></div>
       <div id="loginButtonGroup" class="container">
         <div class="row">
-          <button id="loginEB" type="button" class="btn btn-outline">Login With Email</button>
-          <button id="loginGB" type="button" class="btn btn-outline">Login With Google</button>
-          <button id="signupB" type="button" class="btn btn-outline">Create New Account</button>
+          <button id="logInButton" type="button" class="btn btn-outline">Login With Email</button>
+          <button id="createAccountButton" type="button" class="btn btn-outline" data-toggle="modal" data-target="#addAccountDialog">Create New Account</button>
         </div>
-      </div> -->
+      </div>
       <div id="firebaseui-auth-container"></div>
     </div>
+
+    <div id="createAccountModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="Add Account dialog"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Create A New Account</h5>
+            </div>
+            <div class="modal-body">
+              <div class="form-group bmd-form-group">
+                <label for="inputName" class="bmd-label-floating">Display Name</label>
+                <input type="text" class="form-control" id="inputName">
+              </div>
+              <div class="form-group bmd-form-group">
+                <label for="inputEmail">Email Address</label>
+                <input type="text" class="form-control" id="inputEmail">
+              </div>
+              <div class="form-group">
+                <label for="password" class="bmd-label-floating">Password</label>
+                <input type="password" class="form-control" id="password">
+              </div>
+              <div class="form-group">
+                <label for="confirmPassword" class="bmd-label-floating">Confirm Your Password</label>
+                <input type="password" class="form-control" id="confirmPassword">
+              </div>
+              
+            </div>
+            <div class="modal-footer">
+              <button id="cancelButton" type="button" class="btn btn-secondary" data-dismiss="modal">CANCEL</button>
+              <button id="submitAddAccount" type="button" class="btn btn-primary">CREATE</button>
+            </div>
+          </div>
+        </div>
+      </div>
     
   </div>
 

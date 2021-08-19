@@ -12,15 +12,16 @@
 
 <body>
   <nav class="navbar navbar-dark fixed-top">
-    <a class="navbar-brand" href="/mainpage.html">Cook4Better</a>
+    <a id="backButton" class="navbar-brand" href="/mainpage.html">Cook4Better</a>
 
     <div class="dropdown pull-xs-right">
       <button class="btn bmd-btn-icon dropdown-toggle" type="button" id="lr1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         <i class="material-icons">more_vert</i>
       </button>
-      <div class="dropdown-menu dropdown-menu-right" aria-labelledby="lr1">
+      <div id="dropDownMenu" class="dropdown-menu dropdown-menu-right" aria-labelledby="lr1">
         <button id="menuEdit" class="dropdown-item" type="button" data-toggle="modal" data-target="#editRecipeDialog"><i class="material-icons">edit</i>&nbsp;&nbsp;&nbsp;Edit</button>
         <button id="menuDelete" class="dropdown-item" type="button" data-toggle="modal" data-target="#deleteRecipeDialog"><i class="material-icons">delete</i>&nbsp;&nbsp;&nbsp;Delete</button>
+        <button id="BookMark" class="dropdown-item" type="button" data-toggle="modal" data-target="#addFavoriteDialog"><i class="material-icons">bookmark</i>&nbsp;&nbsp;&nbsp;Bookmark</button>
         <button id="menuSignOut" class="dropdown-item" type="button" data-toggle="modal"><i class="material-icons">login</i>&nbsp;&nbsp;&nbsp;Sign Out</button>
       </div>
     </div>
@@ -32,14 +33,13 @@
         <div class="iframe-container">
           <iframe width="550" height="315" src="https://www.youtube.com/embed/" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
-        <p id="detailContent">Content of Recipe</p>
+        <div id="contentwrapper">
+          <div id="detailContent">Content of Recipe</div>
+        </div>
         <button id="oriB" type="button" class="btn btn-outline">Original</button>
     </div>
   </div>
 
-  <button id="fab" type="button" class="btn bmd-btn-fab" data-toggle="modal" data-target="#addRecipeDialog">
-    <i class="material-icons">add</i>
-  </button>
   
   <!-- Modal -->
   <div class="modal fade" id="editRecipeDialog" tabindex="-1" role="dialog" aria-labelledby="Edit recipe dialog" aria-hidden="true">
@@ -65,7 +65,7 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">CANCEL</button>
-          <button id="submitEditRecipe"type="button" class="btn btn-primary" data-dismiss="modal">UPDA</button>
+          <button id="submitEditRecipe"type="button" class="btn btn-primary" data-dismiss="modal">UPDATE</button>
         </div>
       </div>
     </div>
@@ -83,6 +83,35 @@
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">CANCEL</button>
           <button id="submitDeleteRecipe"type="button" class="btn btn-primary" data-dismiss="modal">DELETE</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="addFavoriteDialog" tabindex="-1" role="dialog" aria-labelledby="Add recipe dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Modify this recipe before save to your favorites! </h5>
+        </div>
+        <div class="modal-body">
+          <div class="form-group bmd-form-group">
+            <label for="inputTitle1">Title</label>
+            <input type="text" class="form-control" id="inputTitle1">
+          </div>
+          <div class="form-group bmd-form-group">
+            <label for="inputVideoLink1">Video Link</label>
+            <input type="text" class="form-control" id="inputVideoLink1">
+          </div>
+
+          <div class="form-group bmd-form-group">
+            <label for="contentTextarea1">Content</label>
+            <textarea class="form-control" id="contentTextarea1" rows="10"></textarea>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">CANCEL</button>
+          <button id="submitAddRecipe1" type="button" class="btn btn-primary" data-dismiss="modal">LIKE</button>
         </div>
       </div>
     </div>
