@@ -26,17 +26,14 @@ nav.navbar.navbar-dark.fixed-top {
     /* z-index: 5; */
 }
 
+#searchcontent{
+    max-width: 50%;
+}
 
-/* .navbar > #searchbar {
-    background-color: #800000;
-    color: white;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-} */
+span.bmd-form-group{
+    padding-top: 0px;
+}
 
-/* #navbar-wrapper{
-    position: fixed;
-} */
 
 .bmd-layout-content {
     height: 100vh;
@@ -59,10 +56,6 @@ nav.navbar.navbar-dark.fixed-top {
     margin-right: 0.75rem;
 }
 
-/* .list-group-item{
-    color: #BF826B;
-} */
-
 #menuUserInfo, 
 #menuShowAllRecipes,
 #menuShowMyRecipes,
@@ -70,11 +63,22 @@ nav.navbar.navbar-dark.fixed-top {
     color: #634231;
 }
 
-#searchbutton{
+#searchbutton,
+#backbutton{
     background-color: #A66D3C;
     color: white;
+    margin:0px;
+    /* padding: 0px; */
 }
 
+input{
+    padding: 0px;
+}
+
+#loginEmail,
+#loginPassword{
+    text-align: center;
+}
 
 .page-container {
     margin-top: 75px;
@@ -156,6 +160,10 @@ h7 {
     background-size: cover;
 }
 
+#searchBar{
+    max-width: 85%;
+}
+
 h1 {
     margin-bottom: 0px;
     font-size: 2.5em;
@@ -193,12 +201,6 @@ h5 {
     opacity: 0.8;
 }
 
-
-
-/* iframe{
-    width: 495px;
-    height: 283.5px;
-} */
 #detailContent {
     font-family: 'Shrikhand', cursive;
     font-size: 1.25em;
@@ -216,6 +218,18 @@ iframe {
     max-height: 80% !important;
 }
 
+.iframe-container {
+    text-align: center;
+    width: 100%;
+}
+
+.navbar-toggler {
+	position: fixed;
+    left:5px;
+}
+
+
+
 @media (min-width: 1280px) {
     #typeArea {
         background: white;
@@ -231,6 +245,8 @@ iframe {
         color: white;
         text-align: center;
     }
+
+    
 
 
 }
@@ -321,7 +337,3 @@ iframe {
     float: right;
 }
 
-.iframe-container {
-    text-align: center;
-    width: 100%;
-}

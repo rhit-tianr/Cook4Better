@@ -25,6 +25,11 @@ function htmlToElement(html) {
 	return template.content.firstChild;
 };
 
+function compare(string1, string2) {
+	let regexa = new RegExp(string1+'+');
+	return regexa.test(string2);
+}
+
 // function getDisplayNameById(uid){
 // 	firebase.firestore().collection('Users').doc(uid).get().then((doc) => {
 // 		if (doc.exists) {
@@ -168,15 +173,16 @@ rhit.ListPageController = class {
 			});
 		});
 
-		const searchbutton = document.querySelector("#searchbutton");
-		if (searchbutton) {
-			searchbutton.addEventListener("click", (event) => {
-				const searchcontent = document.querySelector("#searchcontent").value;
-				console.log("clicked search", searchcontent);
+		document.querySelector("#backbutton").onclick = () => {
+			window.location.href = "/mainpage.html";
+		};
+
+		document.querySelector("#searchbutton").addEventListener("click", (event) => {
+				let searchcontent = document.querySelector("#searchcontent").value;
 				window.location.href = `/mainpage.html?search=${searchcontent}`;
-				this.trysearch(searchcontent);
+				// this.trysearch(searchcontent);
 			});
-		}
+		
 
 		rhit.RecipesManager.beginListening(this.updateList.bind(this));
 		// rhit.SingleUserManager.beginListening(this.updateName.bind(this));
@@ -186,12 +192,10 @@ rhit.ListPageController = class {
 		//make a new recipeListContainer
 		const newList = htmlToElement('<div id="recipeListContainer"></div>');
 		// fill recipeListContainer with cards using loop
-		for (let i = 0; i < rhit.RecipesManager.length; i++){
-			const r = rhit.RecipesManager.getRecipeAtIndex(i);
-			const t = r.title;
-			console.log("recipe:" + r);
-			console.log("title?:" + t);
-		}
+		// for (let i = 0; i < rhit.RecipesManager.length; i++){
+		// 	const r = rhit.RecipesManager.getRecipeAtIndex(i);
+		// 	const t = r.title;
+		// }
 		for (let i = 0; i < rhit.RecipesManager.length; i++) {
 			const r = rhit.RecipesManager.getRecipeAtIndex(i);
 			firebase.firestore().collection('Users').doc(r.uid).get().then((doc) => {
@@ -369,7 +373,7 @@ rhit.DetailPageController = class {
 			const urlParams = new URLSearchParams(window.location.search);
 			const parent = urlParams.get("id"); // get the id of the current post
 			// console.log(author","+content+","+title+","+vlink+","+urlParams+","+parent);
-			rhit.RecipesManager.add(content, title, vlink, parent); //author
+			rhit.RecipesManager.add(content, title, vlink, parent,rhit.fbAuthManager.uid); //author
 		};
 		$("#addFavoriteDialog").on("show.bs.modal", (error) => {
 			document.querySelector("#inputTitle1").value = rhit.SingleRecipeManager.title;
@@ -457,16 +461,20 @@ rhit.RecipesManager = class {
 		// 	query = this._ref.orderBy(rhit.FB_KEY_TITLE, "desc").where(rhit.FB_KEY_TITLE, ">=", this.search);
 				
 		// }
+		let titleQuery = this._ref.orderBy(rhit.FB_KEY_TITLE, "desc").limit(100);
 		if(this._search){
-			
-			// query = this._ref.where(rhit.FB_KEY_TITLE, ">=", this._search);
-			rhit.word = this._search;
-			console.log("searching for: "+ rhit.word);
+			query = this._ref.where(rhit.FB_KEY_TITLE, "==", this._search);
+			// console.log(this._search);
+			// rhit.word = this._search;
 		}
 		this._unsubscribe = query.onSnapshot((querySnapshot) => {
 			this._documentSnapshots = querySnapshot.docs;
 			changeListener();
 		});
+		// this._unsubscribe = titleQuery.onSnapshot((querySnapshot) => {
+		// 	this._documentSnapshots = querySnapshot.docs;
+		// 	changeListener();
+		// });
 	}
 	stopListening() {
 		this._unsubscribe();
